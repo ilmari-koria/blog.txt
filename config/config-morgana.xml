@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<morgana-config xmlns="http://www.xml-project.com/morganaxproc">
+  <xslt-connector>Saxon12-3</xslt-connector>
+  <xquery-connector>Saxon12-3</xquery-connector>
+  <path_to_SchXSLT2_transpiler>../schxslt2</path_to_SchXSLT2_transpiler>
+  <path_to_SchXSLT_2>../schxslt/schxslt-1.10/2.0</path_to_SchXSLT_2>
+  <schematron-connector>SchXSLT</schematron-connector>
+  <ixml-connector>com.xml_project.morganaxproc3.markupblitzConnector.MarkupBlitzConnector</ixml-connector>
+  <mediatype-mapping>
+    <!-- TODO looks like the file extension needs to be .txt? Maybe a bug? -->
+    <map file-extension="txt" media-type="application/text" />
+  </mediatype-mapping>
+</morgana-config>
