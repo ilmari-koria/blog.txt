@@ -9,7 +9,7 @@
       <let name="title-value" value="./text()"/>
       <assert test="$title-value != ''"
               role="error">
-        The value of title is cannot be empty.
+        The value of 'title' cannot be empty.
       </assert>
     </rule>
   </pattern>
