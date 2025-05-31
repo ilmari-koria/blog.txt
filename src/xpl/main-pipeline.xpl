@@ -40,7 +40,7 @@
              select="[MORGANA] Converting posts..."/>
   <p:invisible-xml name="ixml-xml-conversion">
     <p:documentation>
-      pipeline starts here with txt to xml conversion
+      Pipeline starts here with txt to xml conversion.
     </p:documentation>
     <p:with-input port="grammar"
                   href="{$ixml-blog-grammar}"/>
@@ -52,17 +52,16 @@
       assert-valid="false"
       name="validate-ixml">
     <p:documentation>
-      validate ixml output
+      Validate ixml output.
       TODO this should output to a log file
     </p:documentation>
     <p:with-input port="schema"
                   href="{$sch-validate-ixml-output}"/>
   </p:validate-with-schematron>
-  <p:if test="//xvrl:digest/@valid='true'">
     <p:xslt name="generate-post-html">
       <p:documentation>
-        transform valid ixml output to html
-        only run if schematron is valid
+        Transform valid ixml output to html.
+        Only run if schematron is valid.
         TODO final html should be validated
       </p:documentation>
       <p:with-input port="stylesheet"
@@ -70,10 +69,9 @@
       <p:with-input port="source"
                     pipe="result@ixml-xml-conversion"/>
     </p:xslt>
-  </p:if>
   <p:xslt name="return-validation-message">
     <p:documentation>
-      return validation messages to standard output
+      Return validation messages to standard output.
     </p:documentation>
     <p:with-input port="stylesheet"
                   href="{$xsl-errors}"/>
