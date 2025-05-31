@@ -6,10 +6,11 @@ post       = title, date, body, nl?.
 title      = char*, blank.
 date       = day, s, month, s, year, blank.
 body       = p+, blank?.
-p          = nl?, line++nl, nl.
+p          = first, nl, line++nl, nl.
 
 { chars }
--line  = c+.
+first = s, s, -line.
+line  = c+.
 -c     = ~[#a; "*_`["].
 -s     = -" "+.
 @day   = digit, digit?.
