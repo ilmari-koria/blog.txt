@@ -6,9 +6,13 @@
   <p:documentation>
     This is the main publishing pipeline.
   </p:documentation>
-  <p:input port="source"/>
+  <p:input port="source" primary="true" />
   <p:output port="result"
+            primary="true" 
             serialization="map{ 'indent': true() }"/>
+  <p:output port="msg"
+            serialization="map{ 'indent': true() }"/>
+  
   <!-- global vars -->
   <p:variable name="ixml-blog-grammar"
               select="'../ixml/txt-post-to-xml.txt'"/>  
@@ -16,6 +20,8 @@
               select="'../sch/validate-ixml-output.sch'"/>
   <p:variable name="xsl-ixml-post-to-html"
               select="'../xsl/ixml-post-to-html.xsl'"/>
+  <p:variable name="xq-msg"
+              select="'../xq/message.xq'"/>
   <p:invisible-xml>
     <p:documentation>
       [1] pipeline starts here with txt to xml conversion
@@ -48,5 +54,8 @@
     <p:with-input port="stylesheet"
                   href="{$xsl-ixml-post-to-html}"/>
   </p:xslt>
+  <p:xquery parameters="map{'message': 'Done'}">
+    <p:with-input port="query" href="{$xq-msg}"/>
+  </p:xquery>  
 </p:declare-step>
 
