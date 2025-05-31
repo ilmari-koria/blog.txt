@@ -22,8 +22,15 @@ fi
 
 CLASSPATH="$MORGANA/MorganaXProc-IIIse.jar:$MORGANA_LIB/*"
 
+# note that morgana switches need to be after the pipeline
 java $JAVA_AGENT -cp "$CLASSPATH" com.xml_project.morganaxproc3.XProcEngine \
      -config=$MORGANA_CONFIG \
      "$SRC/xpl/main-pipeline.xpl" \
      -input:source="$TMP/example-post/example-post.txt" \
-     -output:result="$TMP/publish/example-post.html"
+     -output:result="$TMP/publish/example-post.html" \
+     -cp \
+     -indent-errors \
+     -no-timestamps \
+     -silent \
+     -xslt-message-prefix="[SAXON]: "
+     
