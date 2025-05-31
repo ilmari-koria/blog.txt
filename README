@@ -9,5 +9,6 @@ SOFTWARE
   SaxonJ HE          https://github.com/Saxonica/Saxon-HE [1]
   SchXslt            https://codeberg.org/SchXslt/schxslt
   SchXslt2           https://codeberg.org/SchXslt/schxslt2
+  XSpec              https://github.com/xspec/xspec
 
   [1] With bundled jars that have separate licenses.
