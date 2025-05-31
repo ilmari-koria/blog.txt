@@ -1,1 +1,9 @@
-TODO
+ABOUT
+  plain txt to static site workflow.
+  
+SOFTWARE
+  Markup Blitz       https://github.com/GuntherRademacher/markup-blitz
+  MorganaXProc-IIIse https://www.xml-project.com/morganaxproc-iiise.html
+  SaxonJ HE          https://github.com/Saxonica/Saxon-HE
+  SchXslt            https://codeberg.org/SchXslt/schxslt
+  SchXslt2           https://codeberg.org/SchXslt/schxslt2
