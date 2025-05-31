@@ -2,8 +2,8 @@
 <morgana-config xmlns="http://www.xml-project.com/morganaxproc">
   <xslt-connector>Saxon12-3</xslt-connector>
   <xquery-connector>Saxon12-3</xquery-connector>
-  <path_to_SchXSLT2_transpiler>../schxslt2</path_to_SchXSLT2_transpiler>
-  <path_to_SchXSLT_2>../schxslt/schxslt-1.10/2.0</path_to_SchXSLT_2>
+  <path_to_SchXSLT2_transpiler>../lib/schxslt2</path_to_SchXSLT2_transpiler>
+  <path_to_SchXSLT_2>../lib/schxslt/2.0</path_to_SchXSLT_2>
   <schematron-connector>SchXSLT</schematron-connector>
   <ixml-connector>com.xml_project.morganaxproc3.markupblitzConnector.MarkupBlitzConnector</ixml-connector>
   <mediatype-mapping>
