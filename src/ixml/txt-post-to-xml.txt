@@ -1,0 +1,22 @@
+{ v0.1 }
+{ ilmarikoria@posteo.net }
+
+{ body }
+post       = title, date, body, nl?.
+title      = char*, blank.
+date       = day, s, month, s, year, blank.
+body       = p+, blank?.
+p          = nl?, line++nl, nl.
+
+{ chars }
+-line  = c+.
+-c     = ~[#a; "*_`["].
+-s     = -" "+.
+@day   = digit, digit?.
+-digit = ["0"-"9"].
+@month = "January"; "February"; "March"; "April"; "May"; "June";
+         "July"; "August"; "September"; "October"; "November"; "December".
+@year  = digit, digit, digit, digit.
+-blank = nl, nl.
+-char  = ~[#a].
+-nl    = -#a | -#d, -#a.
