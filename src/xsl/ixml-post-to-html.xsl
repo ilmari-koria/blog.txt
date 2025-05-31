@@ -2,8 +2,10 @@
 <xsl:stylesheet
     version="3.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:ixml="http://invisiblexml.org/NS">
-  <xsl:template match="/">
+    xmlns:ixml="http://invisiblexml.org/NS"
+    exclude-result-prefixes="ixml">
+  <xsl:output method="html"/>
+  <xsl:template match="post">
     <html lang="en">
       <head>
         <meta charset="UTF-8"/>
@@ -14,15 +16,8 @@
       <body>
         <article>
           <header>
-            <h1>
-              <xsl:value-of select="title"/>
-            </h1>
-            <time datetime="{concat(@year, '-', @month, '-', @day)}">
-              <xsl:value-of
-                  select="concat(
-                            date/@day, ' ', date/@month, ' ', date/@year
-                          )"/>
-            </time>
+            <xsl:apply-templates select="title"/>
+            <xsl:apply-templates select="date"/>
           </header>
           <section>
             <xsl:apply-templates select="body/p"/>
@@ -31,9 +26,20 @@
       </body>
     </html>
   </xsl:template>
-  <xsl:template match="body/p">
+  <xsl:template match="title">
+    <h1>
+      <xsl:apply-templates />
+    </h1>
+  </xsl:template>
+  <xsl:template match="date">
+    <time datetime="{concat(@year, '-', @month, '-', @day)}">
+      <xsl:value-of
+          select="concat(@day, ' ', @month, ' ', @year)"/>
+    </time>
+  </xsl:template>
+  <xsl:template match="p">
     <p>
-      <xsl:value-of select="."/>
+      <xsl:apply-templates />
     </p>
   </xsl:template>
 </xsl:stylesheet>
