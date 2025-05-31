@@ -28,6 +28,7 @@ java $JAVA_AGENT -cp "$CLASSPATH" com.xml_project.morganaxproc3.XProcEngine \
      "$SRC/xpl/main-pipeline.xpl" \
      -input:source="$TMP/example-post/example-post.txt" \
      -output:result="$TMP/publish/example-post.html" \
+     -output:validation-report="$TMP/publish/report.txt" \
      -cp \
      -indent-errors \
      -no-timestamps \
