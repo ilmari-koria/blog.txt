@@ -29,6 +29,7 @@ java $JAVA_AGENT -cp "$CLASSPATH" com.xml_project.morganaxproc3.XProcEngine \
      -input:source="$TMP/example-post/example-post.txt" \
      -output:result="$TMP/publish/example-post.html" \
      -output:validation-report="$TMP/publish/report.txt" \
+     -output:output-ixml="$TMP/publish/ixml-out.xml" \
      -cp \
      -indent-errors \
      -no-timestamps \

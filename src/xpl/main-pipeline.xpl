@@ -26,6 +26,13 @@
       This redirects the XVRL validation report to a file.
     </p:documentation>
   </p:output>
+  <p:output port="output-ixml"
+            serialization="map{ 'indent': true() }"
+            pipe="result@ixml-xml-conversion">
+    <p:documentation>
+      Return ixml output.
+    </p:documentation>
+  </p:output>
   <p:variable name="full-date"
               select="fn:current-dateTime()"/>
   <p:variable name="ixml-blog-grammar"
